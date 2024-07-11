@@ -1,0 +1,57 @@
+* funciones recusivas : llamarse a si misma 
+************************************************************
+en LENGUAJE C 
+
+/* ejemplo del factorial de un numero :
+5!= 5*4*3*2*1
+4!= 4*3*2*1
+3!= 3*2*1
+2!= 2*1
+*/
+
+#include <stdio.h >
+
+int main (){
+  int numero ;
+  printf ("ingresa un numero : \n");
+  scanf ("%i" , &numero);
+  fact = factorial (numero);
+  printf ("el factorial de %i es %i \n", n, fact);
+  return 0;
+}
+
+int factorial (int numero) {
+  if (nuemro <= 1){
+    return 1;
+  } else {
+    return n * factorial (n-1);  
+  }  
+}
+
+
+
+suma de los elementos de una lista  #lista = [10,20] ----> suma = 10 + suma[20]
+                                                                      --> 20 + suma[]
+def sumar_en_c (int lista[], int n ){      #siendo int n = sizeof(lista)
+  if (n==0){        
+    return 0;
+  } else {
+    return lista[n-1] + sumar_en_c(lista, n-1);
+  }
+}
+************************************************************
+en PYTHON
+
+def factorial ():                        def factorial(n):
+  res = 1                                return 1 if n == 0 else n * factorial(n-1)
+  if (n > 0) :
+      res = n * factorial (n-1)
+  return res
+
+def suma_rec (lista):
+  if len(lista) == 0:
+  return 0
+  else:
+  retunr lista [0] + suma_rec(lista[1:])
+
+
