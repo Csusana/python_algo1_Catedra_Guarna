@@ -7,7 +7,7 @@ def intercambiar (lista, i ,j ):
   lista[j] = aux                   #<-- i = 10, j = 5, (aux= 5)
 ******************************************************************
 
-SELECION (selection_sort) ----> [Orden O(n^2) ] 
+SELECCION (selection_sort) ----> [Orden O(n^2) ] 
 Consiste en encontrar el menor de todos los elementos del vector 
 e intercambiarlo con el que está en la primera posición. Luego el segundo mas pequeño, y así sucesivamente hasta ordenarlo todo.
      .         _        .       _          .                  . 
