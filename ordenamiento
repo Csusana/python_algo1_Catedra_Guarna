@@ -1,0 +1,68 @@
+*((metodos de ordenamiento (python)*
+******************************************************************
+
+def intercambiar (lista, i ,j ):        
+  aux = lista[i]                   #<-- i = 5, j = 10, (aux= 5)
+  lista [i] = lista[j]             #<-- i = 10, j = 10,((aux= 5)
+  lista[j] = aux                   #<-- i = 10, j = 5, (aux= 5)
+******************************************************************
+
+SELECION (selection_sort) ----> [Orden O(n^2) ] 
+Consiste en encontrar el menor de todos los elementos del vector 
+e intercambiarlo con el que está en la primera posición. Luego el segundo mas pequeño, y así sucesivamente hasta ordenarlo todo.
+     .         _        .       _          .                  . 
+a = [3,8,5,6,7,1]--> [1,8,5,6,7,3]--> [1,3,5,6,7,8]--> [1,3,5,6,7,8]
+actual = 3, menor = 8,5,6,7,1 y va comparando con los restos, al encontrar el menor, intercambia de lugar con el elmento acual 
+
+def ord_seleccion(lista):
+ n = len(lista)
+    for i in range (n, n-1):      # <-- bucle padre
+        menor = i   # primer elemento por default será el mínimo
+
+        for j in range(i + 1, n)):   # <-- bucle hijo
+            if (lista[j] < lista[menor]):
+                menor = j       # intercambia una sola vez por cada ciclo externo
+
+        if menor != i:
+            lista[menor], lista[i] = lista[i], lista[menor]
+
+******************************************************************
+
+BURBUJA (bubble_sort)----> [Orden O(n^2) ] 
+Funciona revisando cada elemento con su adyacente. 
+Si ambos elementos no están ordenados, se procede a intercambiarlos, si por el contrario los elementos ya estaban ordenados se dejan tal como estaban.
+va dejando el mayor al final de la lista.
+     . .                 . .                 . .                 . .               . .                . .
+a = [3,8,5,6,7,1] --> [3,8,5,6,7,1] --> [3,5,8,6,7,1] --> [3,5,6,8,7,1] --> [3,5,6,7,8,1]--> [3,5,6,7,1,8]
+
+
+def burbujeo (lista):
+n = len (lista)
+    for i in range (n - 1):    # <-- bucle padre para la lista 
+        for j in range(n - i - 1) :   # <-- bucle hijo para la comparacion con el siguiente 
+            if (lista[j] > lista[j+1] ):    # intercambia siempre que los elementos no esten en orden
+                lista[j], lista[j+1] = lista[j+1],lista[j]     # <-- comparamos y hacemos el intercambio
+
+print(lista)
+******************************************************************
+
+INSERCION (insertion_sort) ----> [Orden O(n^2) ] 
+Funciona revisando cada elemento con los que ya están ordenados. 
+Si encuentra un elemento que es menor que el elemento anterior en la lista ordenada (los elementos de la izquierda), 
+lo inserta en su posición correcta (para adelante) 
+     .                 _ .               _ _ .            _ _ _ .                  .                .
+a = [3,8,5,6,7,1] --> [3,8,5,6,7,1] --> [3,8,5,6,7,1] -->[3,5,8,6,7,1] -->[3,5,6,8,7,1] -->[3,5,6,7,8,1]
+
+def insercion(lista):
+n= len (lista)
+  for i in range (1,n):
+    actual = lista[i]  #i es el indice actual al que estoy comparando con los restos 
+    j = i   #j es el indice a iterar
+                                                # corre los elementos anteriores un lugar si fuera necesario
+    whiel j > 0 and lista[j - 1] > actual :     # para que vaya comparando con los elementos que hay en la izquierda 
+      lista[j] = lista [j - 1]          # <-- en caso que que es menor, lo coloco a la izquierda 
+      j = j - 1
+
+    lista [indice] = actual 
+print(lista)
+******************************************************************
