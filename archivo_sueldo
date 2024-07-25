@@ -1,0 +1,53 @@
+sea un 'archivo_sueldo .txt ' y quiero calcular el total de los aportes :
+CUIL - nombre- sueldo - aporte
+125, Juan Perez, 100000, 20000
+103, Rosa Gonzales, 200000, 40000
+119, Gabriel Hackl, 300000, 60000
+
+# con slice corto el str en pedacitos  ---> split (",")
+
+********************** VERSION STR (aportes) ***************************
+LEGAJO = 0
+NOMBRE = 1
+SUELDO = 2
+APORTES = 3
+
+def main (): 
+    archivo = open("archivo_sueldo",'r')
+    linea = leer(archivo).split(",")
+    suma_aportes = 0
+    for linea in archivo:
+        linea = linea.rstrip()      #-----> saco los espacios en blanco
+        registros = linea.rsplit(",")      #------> separo en partes por ,
+        suma_aporte += int (registros [ APORTES ] )
+    print(suma_aportes)
+    
+main()
+
+********************** VERSION DICT (ingreso) ***************************
+persona = { }
+with open ('archivo.txt' , 'r' ) as file :
+     # lee las lineas del archivo 
+     lineas = file . readlines
+     
+     #recorre cada linea del archivo
+     for linea in lineas:
+         #divido en partecitas 
+         campo = linea. strip ( )  . split ( ',' )
+         
+         #extraer la info de cada campo
+         id = int (campo[0])
+         nombre = campo [1]
+         ingresos = int (campo [2])
+         aportes = int (campo [3])
+         
+         #almaceno la info de cada persona en el diccionario
+         personas [id] = {
+             'nombre' = nombre,
+             'ingresos' = ingresos
+             }
+         
+# calculo la sumatoria de los aportes
+sumatoria = 0
+for persona in personas.values ( ) :
+    sumatoria += persona ['ingresos']
