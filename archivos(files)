@@ -1,0 +1,59 @@
+[archivos] 
+-persistencia de datos
+-envio o transferencia de datos 
+-soporte a gran cantidad de datos
+
+1)crear un archivo 
+2)abrirlo 
+  3) escribir datos (guradar) ----> ciclo
+  4) leer datos (recuperar)-----> ciclo
+5)cerrarlo
+
+
+archivo = open ('nombre_arhivo.txt','w')
+## archivo = open ('nombre_arhivo.txt','a') --> agrega una linea al final
+archivo.write('ESTE TEXTO SE GURADA EN EL ARCHIVO\n') --> '\n'salto de linea
+archivo.write('aca guardo otra cosa\n')
+archivo.close()
+
+archivo = open("prueba_1",'r')
+datos = archivo.read()
+print(type(datos)) ----> <class 'str'>
+
+******************************************************
+for linea in archivo:
+    #print(linea,end = '')
+    print(linea.rstrip()) ---> funcion de str para sacar todos los sin espacios en blancos
+******************************************************
+archivo = open("prueba_1",'r')
+linea = archivo.readline()
+while (linea):
+    print(linea.strip())
+    linea=archivo.readline()
+archivo.close
+************************* VERSION SEPARADO *****************************
+
+def leer (archivo):
+    l = archivo .readline()
+    return l 
+
+archivo = open("prueba_1",'r') 
+linea = leer (archivo)
+while (linea):
+     print(linea.strip())
+     linea=leer (archivo)
+archivo.close
+
+************************* CSV(Coma, Separated, Values) *********************
+
+
+
+
+
+
+
+
+
+
+
+
