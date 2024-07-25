@@ -1,0 +1,75 @@
+********************** ejercio 1 *********************************
+
+"""Dado un archivo “prueba.txt” de formato CSV (valores separados por coma), en
+donde hay 3 campos: número de legajo, nombre y apellido, nota (de tipo entero),
+se pide: leerlo e imprimirlo por pantalla con el mismo formato que está en el
+archivo.
+Nota: escribir un archivo para probar el programa. """
+
+def main ():
+    #abro el archivo
+    archivo = open( 'prueba.csv' , 'r')
+    
+    #leo las lineas
+    linea = archivo.readline()
+    
+    while linea:
+        print(linea.rstrip()) #----> saco los saltos de linea 
+        linea = archivo. readline ()
+    archivo.close ()
+
+main()
+
+********************** ejercio 2 *********************************
+
+"""Dado el mismo archivo del punto anterior, leerlo por completo e ir generando, a
+medida que se lo lee, un nuevo archivo “prueba2.txt” con el mismo formato, pero,
+en lugar de nota irá: R (recursa) si la nota es menor a 4, A (aprobado) si está entre
+4 y 7, D (distinguido) si es 8 o 9, y S (sobresaliente) si es 10.  """  
+
+def modificar_nota() :
+    
+    archivo_entrada = open ('prueba.csv' ,'r') #abro el archivo prueba.csv 
+    archivo_salida = open ('prueba2.txt' , 'w')  #creo el archivo prueba2.txt
+    
+    #leo las lineas del archivo_entrada 
+    linea = archivo_entrada.readline ()
+    
+    while linea :
+        #  separo los elemetos ---> devuelven str
+        registro = linea . rstrip() . split (",")
+        
+        # obtener legajo, nombre y nota
+        legajo = int (registro[0])
+        nombre = registro[1]
+        nota = int (registro[2])
+        
+        #determino las notas
+        if nota < 4:
+            resultado = 'R'  #recursa
+        elif 4 <= nota <= 7 :
+            resultado = 'A'  #aprobado
+        elif 8 <= nota <= 9:
+            resultado = 'D'  #distinguido
+        else:
+            resultado = 'S'  #sobresaliente
+            
+        #escribo en el archivo de salida con append
+        archivo_salida . write (f"{legajo}, {nombre}, {resultado} \n")  #SALTO DE LINEA 
+        
+        #paso a la siguiente linea
+        linea = archivo_entrada.readline()
+        
+    #cierro los archivos
+    archivo_entrada.close()
+    archivo_salida.close()
+    
+modificar_nota()
+    
+
+
+
+
+
+
+
