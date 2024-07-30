@@ -67,3 +67,22 @@ n= len (lista)
     lista [indice] = actual 
 print(lista)
 ******************************************************************
+
+BUSQUEDA BINARIA (binary Search) ----> [Orden O(log(n)) ] 
+
+def busqueda_binaria (lista, objetivo):
+  izquierda = 0
+  derecha = len(lista) -1
+
+  while izquierda <= derecha:
+    medio = (izquierda + derecha ) // 2
+    if lista [medio] == objetivo :
+      return medio #---> encontramos el numero 
+
+    elif lista [medio] < objetivo : #si es menor, el objeto estara en la mitad_der.
+      izquierda = medio + 1 #----> modifico el rango de la izquierda
+    else :  #si es menor, el objeto estara en la mitad_izq.
+      derecha = medio -1   #----> modifico el rango de la derecha
+
+return -1 # retorna -1 si no fue encontrado
+
