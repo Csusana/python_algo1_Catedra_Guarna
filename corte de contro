@@ -1,0 +1,28 @@
+""" 
+  - se suele aplicar a un unico archivo
+  - el archivo debe tener un formato predefinido
+  - debe estra ordenado por uno o mas campos
+ej. achivo cvs con formato : dia. id_producto, cantidad_vendida 
+    1,2,8      
+    1,2,3
+    1,3,4
+    2,1,5
+    2,5,8
+    2,9,1
+"""
+  #estructura de un corte de control (cantidad vendida por dia)
+
+# cantidad_total_vendida = 0   ----> si quisiera saber la cantidad total  
+dia,id_producti,cantidad = leer(archivo)
+while not fin_del_archivo:  #-----> un while para cada campo ordenado
+  dia_anterior = dia
+
+  while not fin_del_archivo and dia_anterior == dia:
+    id_producto_anterior = id_producto
+
+      while noy fin_del_archivo and dia_anterior == dia 
+          and id_producto_anterior == id_producto:  #---> agrega condiciones 
+        dia,id_producto,cantidad = leer(archivo) 
+    
+#cantidad_total_vendida += cantidad
+  
