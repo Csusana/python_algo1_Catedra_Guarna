@@ -1,0 +1,28 @@
+********************* EJERCICIO EN C **************************
+/* escribir una funcion en c que reciba por parametro un vector de enteros positivos y su lonigtud.
+y devuelva la cantidad de valores que son multiplos del elemento siguiente. Escribir un programa que invoque
+dicha funcion pasando como parametro el arreglo del ejericio y su longitud.
+ejemplo [16,8,2,4,15,5] ---> 3 (xq 16 es de muly de 8, 8 es muto de 2 y 15 es multi de 5)
+*/ 
+
+#include<stdio.h>
+int contar_multiplo (int arr[], int longitud){
+  int contador = 0;
+  for (int i; i < longitud-1; i++){
+    if(arr[i] % arr[i+1] == 0){
+      contador ++ ; 
+    }
+  }
+  return contador;
+} 
+
+int main(){
+
+   int arreglo[] = {16,8,2,4,15,5}; 
+   int longitud = sizeof(arrgelo) / sizof(arrgelo[0]);
+   int resultado = contar_multiplo (arreglo , longitud);
+   printf ("la cantidad de valores q son multi es %d \n ", resultado);
+   
+   return 0;
+}
+********************* EJERCICIO EN C **************************
